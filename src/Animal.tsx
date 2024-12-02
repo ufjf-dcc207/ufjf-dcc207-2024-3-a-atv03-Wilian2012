@@ -17,7 +17,15 @@ AnimalProps) {
             return <div className="animal">
              <div className="icone">{icone}</div>
             <div className="nome">{nome}</div>
-            <div className="peso">{peso} Kg</div>
+            {peso>0.0?(
+                <div className="peso">{peso} Kg</div>
+            )
+               :(
+                <div className="peso">Desconhecido</div>
+               )
+            }
+            
+            
             {exticao && <div className="exticao">Em Extiçao</div>}
         </div>
         };
