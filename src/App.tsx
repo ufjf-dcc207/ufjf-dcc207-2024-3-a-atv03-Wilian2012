@@ -4,7 +4,7 @@ import './App.css';
 function App() {
 
   return <div className="app">
-      <Animal icone="🐻" nome="Urso" peso = {300} exticao={true}/> 
+      <Animal icone="🐻" nome="Urso" peso = {-1} exticao={false}/> 
   
   </div>;
 

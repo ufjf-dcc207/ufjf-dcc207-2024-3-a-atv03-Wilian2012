@@ -12,10 +12,15 @@ export default function Animal({icone,nome,peso, exticao}:
 
 AnimalProps) {
 
-    return <div className="animal">
-        <div className="icone">{icone}</div>
-        <div className="nome">{nome}</div>
-        <div className="peso">{peso} Kg</div>
-        <div className="exticao">{exticao}</div>
-    </div>
-}
+   
+        
+            return <div className="animal">
+             <div className="icone">{icone}</div>
+            <div className="nome">{nome}</div>
+            <div className="peso">{peso} Kg</div>
+            {exticao && <div className="exticao">Em Extiçao</div>}
+        </div>
+        };
+
+          
+   
