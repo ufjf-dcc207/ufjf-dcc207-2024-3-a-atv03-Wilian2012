@@ -16,18 +16,16 @@ function App() {
 
   const exA1: ReactNode[]=[];
   
-  const exB2: ReactNode[] = ANIMAIS.map(function(animal){
-  
-    return (
-    <Animal 
-       key={animal[1]}
+  const exB2: ReactNode[] = ANIMAIS.map((animal)=> <Animal 
+       
+  key={animal[1]}
        icone={animal[0]}
         nome={animal[1]}
        peso={animal[2]}
        exticao={animal[3]}
        />
       );
-  });
+
   
   return <div className="app">
      <Exibicao 
