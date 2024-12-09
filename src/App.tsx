@@ -20,7 +20,21 @@ function App() {
 
   for(let i=0; i< ANIMAIS.length;i++)
     {
-      exA1.push(<Animal 
+      if(ANIMAIS[i][2]<200.0 ) {
+        
+        exA1.push(<Animal 
+          key={ANIMAIS[i][1]}
+          icone={ANIMAIS[i][0]}
+           nome={ANIMAIS[i][1]}
+          peso={ANIMAIS[i][2]}
+          exticao={ANIMAIS[i][3]}
+          />
+          );
+
+      }
+
+      else
+      exB2.push(<Animal 
         key={ANIMAIS[i][1]}
         icone={ANIMAIS[i][0]}
          nome={ANIMAIS[i][1]}
