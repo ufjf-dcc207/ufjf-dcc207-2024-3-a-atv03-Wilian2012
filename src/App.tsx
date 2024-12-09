@@ -1,52 +1,33 @@
-import { ReactNode } from 'react';
 import Animal from './Animal';
 import './App.css';
 import Exibicao from './Exibicao';
+import EXIBICOES from "./exibicoes";
 
-type AnimaisTuplaType=[string,string,number,boolean]
-const ANIMAIS : AnimaisTuplaType[]=[
-
-    ["🐻" ,"Urso", 190, true], 
-    ["🐕‍🦺","Cachorro",50,true], 
-    ["🦍" ,"Gorila" ,300,true], 
-    ["🦥" , "Preguica",80,false], 
-
-];
 function App() {
 
-  const exA1: ReactNode[]=[];
   
-  const exB2: ReactNode[] = ANIMAIS.map((animal)=> <Animal 
-       
-  key={animal[1]}
-       icone={animal[0]}
-        nome={animal[1]}
-       peso={animal[2]}
-       exticao={animal[3]}
-       />
-      );
-
-  
-  return <div className="app">
+return (
+  <div className="app">
+  {EXIBICOES.map((exibicao)=>(
      <Exibicao 
-      abertura={new Date("2024-11-06T08:00-03:00")}
-      fechamento={new Date("2024-11-06T12:00-03:00")} cercado="A1"
-      > {exA1}
-      
-      
-      
+      key = {exibicao[0]}
+      abertura={new Date(exibicao[1])}
+      fechamento={new Date(exibicao[2])}
+       cercado={exibicao[0]}
+      > 
+       {exibicao[3].map((animal) =>(
+     <Animal
+     key={animal[1]}
+     icone={animal[0]}
+     nome={animal[1]}
+     peso={animal[2]}
+     exticao={animal[3]}
+     />
+     ))}
       </Exibicao>
-      <Exibicao
-      
-          abertura={new Date("2024-11-06T13:00-03:00")}
-          fechamento={new Date("2024-11-06T17:00-03:00")} 
-          cercado="B1"
-      >{exB2}
-
-  
-  </Exibicao>
-  </div>;
-
+  ))}
+  </div>
+);
 }
 
 export default App;
